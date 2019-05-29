@@ -1,3 +1,4 @@
+@import '../../../colors.scss';
 .slider {
   width: 100%;
   display: flex;
@@ -22,6 +23,15 @@
     position: absolute;
     left: 0px;
     color: #00a7e4;
+    &.puppies {
+      color: $puppies;
+    }
+    &.cats {
+      color: $cats;
+    }
+    &.corporations {
+      color: $corporations;
+    }
     font-size: 36px;
     transition: filter 250ms;
   }
@@ -38,7 +48,16 @@
 
   .line {
     fill: none;
-    stroke: #00a7e4;
+    // stroke: #00a7e4;
+    &.puppies {
+      stroke: $puppies;
+    }
+    &.cats {
+      stroke: $cats;
+    }
+    &.corporations {
+      stroke: $corporations;
+    }
     stroke-width: 3;
   }
 
