@@ -13,6 +13,7 @@ $(document).ready(function() {
    * @description render markup
    */
   $('#root').prepend(`
+  <h1>Schweinekiste</h1>
   <div class="data-section">
     ${barChart()}
     ${radialLineChart()}
