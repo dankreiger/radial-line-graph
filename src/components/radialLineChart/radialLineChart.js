@@ -1,5 +1,5 @@
-import './radialLineChart.scss';
-import { puppiesImage } from '../../../data/sampleImages';
+import "./radialLineChart.scss";
+import { puppiesImage } from "../../../data/sampleImages";
 
 const radialLineChart = () => `
   <svg width="500" height="500">
