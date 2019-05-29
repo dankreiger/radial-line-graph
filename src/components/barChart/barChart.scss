@@ -1,0 +1,114 @@
+//Setup
+@import '../../../colors.scss';
+
+@mixin stagger-anim-delay($i, $initial-delay, $stagger-delay) {
+  @while $i > 0 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: $initial-delay + $stagger-delay * $i;
+    }
+    $i: $i - 1;
+  }
+}
+
+body {
+  margin-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+  color: #282828;
+}
+
+//Demo
+.characteristics {
+  width: 90%;
+  align-self: center;
+  margin: auto;
+  position: relative;
+}
+
+.chart {
+  margin: 30px 0 0;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.chart__title {
+  display: block;
+  margin: 0 0 10px;
+
+  font-weight: bold;
+
+  opacity: 0;
+
+  animation: 1s anim-lightspeed-in ease forwards;
+
+  .chart--dev & {
+  }
+  .chart--prod & {
+    animation-delay: 3.3s;
+  }
+  .chart--design & {
+    animation-delay: 4.5s;
+  }
+}
+
+.chart--horiz {
+  overflow: hidden;
+  list-style: none;
+  padding-left: 0;
+}
+
+.chart__bar {
+  $border-rad: 4px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  // background: linear-gradient(to left, #4cb8c4, #3cd3ad);
+  border-top-right-radius: $border-rad;
+  border-bottom-right-radius: $border-rad;
+  opacity: 0;
+
+  animation: 1s anim-lightspeed-in ease forwards;
+  transition: width 500ms, background 250ms;
+  &.puppies {
+    background: $puppies;
+    &.active {
+      background: $puppiesActive;
+    }
+  }
+  &.cats {
+    background: $cats;
+    &.active {
+      background: $catsActive;
+    }
+  }
+  &.corporations {
+    background: $corporations;
+    &.active {
+      background: $corporationsActive;
+    }
+  }
+  .chart--dev & {
+    @include stagger-anim-delay(11, 0.5s, 0.2s);
+  }
+}
+
+.chart__label {
+  padding-left: 10px;
+  line-height: 30px;
+  color: white;
+}
+
+//Keyframes
+@keyframes anim-lightspeed-in {
+  0% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

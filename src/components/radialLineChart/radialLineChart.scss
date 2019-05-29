@@ -1,0 +1,27 @@
+@import '../../../colors.scss';
+
+@mixin fill($var) {
+  fill: $var;
+  transition: fill 250ms;
+}
+.circle {
+  &-puppies {
+    @include fill($puppies);
+    fill: $puppies;
+    &.active {
+      fill: $puppiesActive;
+    }
+  }
+  &-cats {
+    @include fill($cats);
+    &.active {
+      fill: $catsActive;
+    }
+  }
+  &-corporations {
+    @include fill($corporations);
+    &.active {
+      fill: $corporationsActive;
+    }
+  }
+}
