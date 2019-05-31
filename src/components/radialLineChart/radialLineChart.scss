@@ -1,8 +1,11 @@
-@import "../../../colors.scss";
+@import '../../../colors.scss';
 
 @mixin fill($var) {
   fill: $var;
   transition: fill 250ms;
+}
+svg {
+  margin: 0 auto;
 }
 .circle {
   &-puppies {
