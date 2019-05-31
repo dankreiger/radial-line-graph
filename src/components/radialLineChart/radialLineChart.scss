@@ -4,6 +4,9 @@
   fill: $var;
   transition: fill 250ms;
 }
+svg {
+  margin: 0 auto;
+}
 .circle {
   &-puppies {
     @include fill($puppies);
